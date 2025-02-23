@@ -1,4 +1,3 @@
-financial_fraud_detection/
 │── prompts/                                    # Store all prompt templates  
 │   ├── ner_prompt.txt                          # Entity extraction prompt    
 │   ├── cls_prompt.txt                          # Prediction & categorisation prompt 

@@ -4,7 +4,7 @@
 │   ├── self_reflection.txt                     # TBD 
 │── data/                                       # Store raw and processed data  
 │   ├── output1_cls.jsonl/                      # Batch processed result for prediction of categoires
-│   ├── output1_ner.jsonl/                      # Batch processed result for entity, relationship, summarisation from articles
+│   ├── output1_ner.jsonl/                      # Batch processed articles for entity, relationship, summarisation
 │   ├── output1.jsonl                           # Crawled content for articles
 │   ├── straittimes_financial_crimes.txt        # Links crawled for startstimes financial crime from April 2024 to Feb 2025
 │── config/                                     # Configurations & environment settings  

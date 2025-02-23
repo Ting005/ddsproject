@@ -1,0 +1,99 @@
+### **Task:**  
+You are an AI trained to classify news articles related to financial crimes. The classification follows a **two-step** hierarchical structure.  
+
+---
+
+## **Step 1: Broad Category Classification**  
+Each article must be assigned one or more of the following broad categories:  
+
+### **1. Financial Crime**  
+Covers illegal financial activities such as fraud, corruption, money laundering, tax evasion, insider trading, and Ponzi schemes.  
+
+**Example 1:** A bank executive was arrested for orchestrating a multi-million dollar **money laundering** scheme by channeling illicit funds through offshore accounts.  
+**Example 2:** A hedge fund manager was charged with **securities fraud** after misleading investors about company earnings.  
+**Example 3:** A corporation falsified revenue reports to evade **tax payments**, leading to a government investigation.  
+
+---
+
+### **2. Scandals**  
+Involves corporate or government misconduct, ethical violations, and reputational damage due to financial wrongdoing.  
+
+**Example 1:** A tech company’s CEO was forced to resign after it was revealed that executives manipulated stock prices through **insider trading**.  
+**Example 2:** A government official was exposed for accepting **bribes** from business owners to secure lucrative contracts.  
+**Example 3:** A major investment firm faced backlash after an investigation found widespread **accounting fraud**, leading to significant reputational damage.  
+
+---
+
+### **3. Sanctions**  
+Relates to financial restrictions, penalties, or violations involving sanctioned entities, countries, or individuals.  
+
+**Example 1:** A European bank was fined for conducting transactions with a **sanctioned** Russian company despite international restrictions.  
+**Example 2:** A global shipping firm was penalized for illegally transporting goods to a **sanctioned** country in violation of trade laws.  
+**Example 3:** The U.S. imposed **new financial sanctions** on a foreign government accused of funding terrorist activities.  
+
+---
+
+## **Step 2: Specific Subcategory Classification**  
+Once categorized, classify the article into one or more relevant subcategories:  
+
+### **Financial Crime Subcategories:**  
+- **Money Laundering** – Concealing illicit funds through financial transactions.  
+  - *Example:* A drug cartel used real estate purchases to launder illegal profits.  
+- **Terrorist Financing** – Funding terrorist organizations or activities.  
+  - *Example:* A charity was exposed for funneling donations to extremist groups.  
+- **Fraud** – Deceptive financial practices (e.g., wire fraud, securities fraud, corporate fraud).  
+  - *Example:* A CEO faked company earnings reports to attract investors.  
+- **Tax Evasion** – Illegally avoiding taxes via underreporting, offshore shelters, or falsified records.  
+  - *Example:* A multinational corporation hid billions in offshore accounts to evade taxes.  
+- **Bribery & Corruption** – Offering/accepting bribes to influence decisions.  
+  - *Example:* A politician accepted a bribe to approve a construction project.  
+- **Insider Trading** – Trading securities using non-public information.  
+  - *Example:* A Wall Street executive profited from stock trades based on confidential merger details.  
+- **Ponzi & Pyramid Schemes** – Fraudulent investment schemes using new investor funds to pay earlier ones.  
+  - *Example:* A fake cryptocurrency scheme promised high returns but collapsed when new investors stopped joining.  
+- **Trade-Based Money Laundering (TBML)** – Moving illicit funds via manipulated trade transactions.  
+  - *Example:* A shell company falsely inflated invoices to disguise illegal financial flows.  
+
+---
+
+### **Scandals Subcategories:**  
+- **Corporate Scandal** – Financial or ethical misconduct by corporations.  
+  - *Example:* A major auto manufacturer was exposed for falsifying emissions test results.  
+- **Government Scandal** – Corruption or financial misconduct involving government officials.  
+  - *Example:* A city mayor misused public funds to finance a personal real estate project.  
+- **Regulatory Violation** – Breaches of financial regulations (not necessarily illegal).  
+  - *Example:* A bank was fined for failing to implement proper anti-money laundering controls.  
+
+---
+
+### **Sanctions Subcategories:**  
+- **Sanctions Violations** – Transactions bypassing international sanctions.  
+  - *Example:* A global bank was caught facilitating transactions with a sanctioned Iranian company.  
+- **Sanctions Imposed** – New financial restrictions placed on entities, individuals, or countries.  
+  - *Example:* The EU imposed fresh sanctions on a foreign company linked to illegal arms sales.  
+
+---
+
+## **Classification Instructions:**  
+1. **Identify all relevant broad categories** (Financial Crime, Scandals, or Sanctions). An article may belong to multiple categories.  
+2. **Assign one or more relevant subcategories** based on the article’s content.  
+3. If multiple offenses are present, include all applicable classifications.  
+4. **Extract key terms from the article** that are relevant to classification. Key terms should include:  
+   - **Entities:** Names of companies, individuals, or organizations mentioned.  
+   - **Financial Terms:** Any relevant financial transactions, penalties, fines, or amounts.  
+   - **Crime Indicators:** Specific words that indicate financial crime (e.g., fraud, laundering, insider trading).  
+5. Return output in **valid JSON format**, structured as follows:  
+
+```json
+{{
+  "broad_classification": ["Financial Crime", "Sanctions"],
+  "amount_involved": "$50 million",
+  "detailed_classification": ["Money Laundering", "Sanctions Violations"],
+  "key_terms": ["XYZ Bank", "illegal transactions", "offshore accounts", "sanctions breach"],
+  "reasoning": "The article discusses XYZ Bank's involvement in laundering illicit funds through offshore accounts while violating international sanctions."
+}}
+
+The input article is 
+{article}
+
+Your response is:

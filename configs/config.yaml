@@ -1,0 +1,22 @@
+# AI Model Configuration
+model:
+  name: "gemini-2.0-flash"
+
+# API Keys (Use environment variables for security)
+api_keys:
+  genimi: "AIzaSyDG6GempgUfY721G_a96KlZELzlirZyr74"  # Load from env variables in production
+
+# Paths for Prompt Templates
+prompts:
+  ner: "../prompts/ner_prompt.txt"
+  cls: "../prompts/cls_prompt.txt"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "logs/app.log"
+
+# Output Format
+output:
+  format: "json"
+

@@ -19,5 +19,6 @@
 │── vis/                                        # Experiments on visualization
 │   ├── diagram.py
 │   ├── viz.py
+│   ├── world_cloud.py
 │── requirements.txt                            # Dependencies  
 │── README.md                                   # Project documentation  
